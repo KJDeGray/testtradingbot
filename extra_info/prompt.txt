@@ -1,0 +1,42 @@
+Hi GPT. I have a very complex issue. In general, I am trying to code a stock trading AI. But lets break this down into smaller steps. I want you to remember the steps i have done and still need to do/store them in memory. I do not need to work on all of them now just remember them so we can go down the checklist later. Also, before i continue, any time i mention sentiment, i do not want a single number. It should at least be a sentiment and confidence value or a ratio of positive negative and neutral if not even more complex.
+
+1: First, i can already download historical news data from alpaca api. This can probably be expanded in the future but probably at the very end, maybe even a final step. 
+
+2: I can also download Ticker data from yahoo api (this contains info on the type of industry and short descriptions of it). This is probably good to go.
+
+3: Using this info, I have generated map/arrays. The first map is done with text embedding on the ticker data. I checks for similarities in their description and market and generates a num_ticker by num_ticker matrix array of each ticker to each other ticker. 
+
+4: The second is the generated with text embeddings from the articles. It checks for similarities from the news and generates two maps. One is from ticker to ticker and is the same dimension as the one from the yahoo ticker info. The other is from article to ticker and shows how relevant the article is to each ticker using previous articles as reference.
+
+5: I need to verify that these are correct and do what i think they do. 
+
+6: Some other steps that I know need to be done (i may be missing steps please suggest some if there are any):
+
+i want to take all news articles from a specific day and, using the info from above, correlate it into different ways. 
+A: I want direct correlation to tickers from the info given in the article (some of them mention specific tickers or industries) 
+B: I want to correlate them using the article sentiment mapping i have already done to capture more subtle correlations
+C: I want to correlate them using the ticker to ticker maps
+D: I want to correlate them to different market sectors/industries. 
+
+From there I want to take A,B,C, and D to create a complex sentiment of a specific ticker. Also, i want to take A,B,C, and D to create a complex market sentiment. These sentiments can probably be unsupervised since they will just be inputs of the next network.
+
+7: I need to create a network, possibly an lstm or convolutional layer (convolutional in time) so that i can feed it successive days of data and i keep data from multiple days rather than looking at only the most current day.
+
+8: I need to read in the whole market of bars from alpaca.
+
+9: I need to calculate information from the bars such as long term highs and lows as well as volatility and other numbers i want you to suggest. 
+
+10: using the bars from alpaca and the more complicated data i need to create market/ some form of CNN/ perhaps another suggestion that can correlate the info of close tickers together. this also needs to go through some form of time series network to capture the time series nature of this
+
+11: i need to also to capture time series information of specific tickers
+
+12: I want a handful of already made stock price prediction models. perhaps some that are purely mathematical/ not ML and some that are. 
+
+13: Wrap everything up. one model can try to predict each sector. then a model for the whole market. then i can feed all of that and more of the above all into one model that can try to predict the price of an individual ticker. This way to change the ticker i don't have to retrain the market/ sector models and should only have to train the individual ticker model/output layer and mayber the reading of the news that pertains to that individual model.
+
+14: other possibilities. 
+A: Use stock data to fine tune the sentiment analysis. If i can you text/news to predict prices, I should be able to use prices to determine how much of an effect text has.
+B: Rather than time CNN or LSTM i can add ESN or Reservoir layers. 
+C: please suggest more of these when we get to this point
+
+Please generate an instruction or canvas that this project can have that will be remembered. Please also reorganaize the bullets above into a better order/grouping. 
