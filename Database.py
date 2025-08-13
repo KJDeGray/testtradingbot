@@ -54,11 +54,11 @@ def load_cached_ticker():
     return {}
 
 
-def save_affiliation_data(state, base_filename = c.DATA_DIR):
-    with open(f"{base_filename}_state.pkl", 'wb') as f:
+def save_affiliation_data(state):
+    with open(c.make_data_filepath(c.AFFILIATION_NAME,suffix=".pkl"), 'wb') as f:
         dill.dump(state, f)
 
 def load_affiliation_data(base_filename = c.DATA_DIR):
-    with open(f"{base_filename}_state.pkl", 'rb') as f:
+    with open(c.make_data_filepath(c.AFFILIATION_NAME,suffix=".pkl"), 'rb') as f:
         state = dill.load(f)
     return state

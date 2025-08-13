@@ -1,7 +1,7 @@
 import os
-
-API_KEY = "PKJUP996961KC63A7FWO" 
-API_SECRET = "FlS4JsxyehoBzODmBHBofbPyaWuqgq3QY7XyIFer" 
+import Secrets
+API_KEY = Secrets.API_KEY
+API_SECRET = Secrets.API_SECRET
 
 DATA_BASE_URL = "https://data.alpaca.markets"
 TRADING_BASE_URL = "https://paper-api.alpaca.markets"
@@ -21,6 +21,7 @@ os.makedirs(DATA_DIR, exist_ok=True)
 RAW_NEWS_NAME = "news_data"
 RAW_TICKER_NAME = "ticker_data"
 RAW_BARS_NAME = "bars_data"
+AFFILIATION_NAME = "affiliation_data"
 
 
 
