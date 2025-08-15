@@ -62,3 +62,4 @@ def load_affiliation_data(base_filename = c.DATA_DIR):
     with open(c.make_data_filepath(c.AFFILIATION_NAME,suffix=".pkl"), 'rb') as f:
         state = dill.load(f)
     return state
+
